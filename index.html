@@ -26,10 +26,10 @@
       content="Explore the HMS Hisingen (M43), a well-maintained naval vessel now available for sale. Located in Stockholm, this 24-meter ship offers spacious living areas and a rich history."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://www.example.com" />
+    <meta property="og:url" content="https://webel.github.io/hmshisingen" />
     <meta
       property="og:image"
-      content="http://www.example.com/images/hms-hisingen.jpg"
+      content="https://webel.github.io/hmshisingen/images/hisingen_1980.png"
     />
 
     <!-- Twitter Card Data -->
@@ -44,7 +44,7 @@
     />
     <meta
       name="twitter:image"
-      content="http://www.example.com/images/hisingen_1980.png"
+      content="https://webel.github.io/hmshisingen/images/hisingen_1980.png"
     />
 
     <!-- Author -->
@@ -52,12 +52,12 @@
 
     <!-- Additional Meta Tags -->
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="http://www.example.com" />
+    <link rel="canonical" href="https://webel.github.io/hmshisingen" />
 
     <!-- Favicon -->
     <link
       rel="icon"
-      href="http://www.example.com/favicon.ico"
+      href="https://webel.github.io/hmshisingen/favicon.ico"
       type="image/x-icon"
     />
 
@@ -113,23 +113,23 @@
 
       let slideInterval = setInterval(slide, slideDuration);
 
-      // Stop auto scroll on hover
+      // Stop auto scroll on hover or touch start
       gallery.addEventListener("mouseenter", () => {
         clearInterval(slideInterval);
       });
 
-      // Resume auto scroll on mouse leave
-      gallery.addEventListener("mouseleave", () => {
-        slideInterval = setInterval(slide, slideDuration);
-      });
-
-      // Stop auto scroll on touch start
       gallery.addEventListener("touchstart", () => {
         clearInterval(slideInterval);
       });
 
-      // Resume auto scroll on touch end
+      // Resume auto scroll on mouse leave or touch end
+      gallery.addEventListener("mouseleave", () => {
+        updateCurrentIndex();
+        slideInterval = setInterval(slide, slideDuration);
+      });
+
       gallery.addEventListener("touchend", () => {
+        updateCurrentIndex();
         slideInterval = setInterval(slide, slideDuration);
       });
 
@@ -145,6 +145,7 @@
         clearTimeout(scrollTimeout);
         scrollTimeout = setTimeout(() => {
           isScrolling = false;
+          updateCurrentIndex();
           slideInterval = setInterval(slide, slideDuration);
         }, 100);
       });
@@ -153,6 +154,19 @@
       window.addEventListener("load", () => {
         slideInterval = setInterval(slide, slideDuration);
       });
+
+      // Update currentIndex based on the current scroll position
+      function updateCurrentIndex() {
+        const childElements = Array.from(gallery.children);
+        const scrollLeft = gallery.scrollLeft;
+        for (let i = 0; i < childElements.length; i++) {
+          const element = childElements[i];
+          if (element.offsetLeft >= scrollLeft) {
+            currentIndex = i;
+            break;
+          }
+        }
+      }
     </script>
   </head>
   <body>
