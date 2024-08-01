@@ -1,0 +1,15 @@
+{
+  "name": "hmshisingen",
+  "version": "1.0.0",
+  "description": "Sale site of HMS Hisingen",
+  "main": "md2html.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "marked": "^13.0.3"
+  }
+}

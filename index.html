@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HMS Hisingen (M43) - A Well-Maintained Historic Naval Vessel</title>
+    <!-- Meta Description -->
+    <meta
+      name="description"
+      content="Discover the HMS Hisingen (M43), a historic naval vessel now available for purchase. This well-maintained 24-meter boat offers spacious living areas and a rich history. Located in Stockholm."
+    />
+
+    <!-- Keywords -->
+    <meta
+      name="keywords"
+      content="HMS Hisingen, naval vessel, boat for sale, Stockholm, historic ship, fishing minesweeper, bobåt, military history, marine vessel, wooden boat"
+    />
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta
+      property="og:title"
+      content="HMS Hisingen (M43) - A Well-Maintained Historic Naval Vessel"
+    />
+    <meta
+      property="og:description"
+      content="Explore the HMS Hisingen (M43), a well-maintained naval vessel now available for sale. Located in Stockholm, this 24-meter ship offers spacious living areas and a rich history."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.example.com" />
+    <meta
+      property="og:image"
+      content="http://www.example.com/images/hms-hisingen.jpg"
+    />
+
+    <!-- Twitter Card Data -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="HMS Hisingen (M43) - A Well-Maintained Historic Naval Vessel"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore the HMS Hisingen (M43), a historic naval vessel available for sale. This well-maintained 24-meter ship offers a rich history and spacious living areas. Located in Stockholm."
+    />
+    <meta
+      name="twitter:image"
+      content="http://www.example.com/images/hisingen_1980.png"
+    />
+
+    <!-- Author -->
+    <meta name="author" content="Owner or Agency Name" />
+
+    <!-- Additional Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="http://www.example.com" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="http://www.example.com/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="gutenberg.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/gutenberg-css@0.7/dist/themes/modern.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/photoswipe/dist/photoswipe.css"
+    />
+
+    <script type="module">
+      import PhotoSwipeLightbox from "https://unpkg.com/photoswipe/dist/photoswipe-lightbox.esm.js";
+      import PhotoSwipe from "https://unpkg.com/photoswipe/dist/photoswipe.esm.js";
+
+      const lightbox = new PhotoSwipeLightbox({
+        gallery: "#gallery",
+        children: "a",
+        pswpModule: PhotoSwipe,
+      });
+
+      lightbox.init();
+    </script>
+
+    <script type="module">
+      // Auto scroll #gallery horizontally smoothly
+      const gallery = document.getElementById("gallery");
+      const slideDuration = 3000; // Duration between scrolls
+      let currentIndex = 0;
+      let isScrolling = false;
+
+      function slide() {
+        if (!isScrolling) {
+          const childElements = Array.from(gallery.children);
+          const totalElements = childElements.length;
+
+          if (currentIndex >= totalElements) {
+            currentIndex = 0; // Reset to the start
+          }
+
+          const nextElement = childElements[currentIndex];
+          gallery.scrollTo({
+            left: nextElement.offsetLeft,
+            behavior: "smooth",
+          });
+
+          currentIndex += 1;
+        }
+      }
+
+      let slideInterval = setInterval(slide, slideDuration);
+
+      // Stop auto scroll on hover
+      gallery.addEventListener("mouseenter", () => {
+        clearInterval(slideInterval);
+      });
+
+      // Resume auto scroll on mouse leave
+      gallery.addEventListener("mouseleave", () => {
+        slideInterval = setInterval(slide, slideDuration);
+      });
+
+      // Stop auto scroll on touch start
+      gallery.addEventListener("touchstart", () => {
+        clearInterval(slideInterval);
+      });
+
+      // Resume auto scroll on touch end
+      gallery.addEventListener("touchend", () => {
+        slideInterval = setInterval(slide, slideDuration);
+      });
+
+      // Stop auto scroll while scrolling manually
+      gallery.addEventListener("scroll", () => {
+        isScrolling = true;
+        clearInterval(slideInterval);
+      });
+
+      // Fallback for browsers that don't support 'scrollend'
+      let scrollTimeout;
+      gallery.addEventListener("scroll", () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          isScrolling = false;
+          slideInterval = setInterval(slide, slideDuration);
+        }, 100);
+      });
+
+      // Start auto-scroll on load
+      window.addEventListener("load", () => {
+        slideInterval = setInterval(slide, slideDuration);
+      });
+    </script>
+  </head>
+  <body>
+    <h1>HMS Hisingen</h1>
+    <div class="psw-gallery" id="gallery">
+      <a
+        href="images/hisingen.jpg"
+        data-pswp-src="images/hisingen.jpg"
+        data-pswp-width="1280"
+        data-pswp-height="864"
+      >
+        <img src="images/hisingen.jpg" alt="HMS Hisingen in 2024" />
+      </a>
+      <a
+        href="images/hisingen_1980.png"
+        data-pswp-src="images/hisingen_1980.png"
+        data-pswp-width="960"
+        data-pswp-height="562"
+      >
+        <img src="images/hisingen_1980.png" alt="HMS Hisingen in 1980" />
+      </a>
+      <a
+        href="images/styrhytt-2.jpg"
+        data-pswp-src="images/styrhytt-2.jpg"
+        data-pswp-width="1280"
+        data-pswp-height="864"
+      >
+        <img src="images/styrhytt-2.jpg" alt="HMS Hisingen in 2000" />
+      </a>
+      <a
+        href="images/salong-2.jpg"
+        data-pswp-src="images/salong-2.jpg"
+        data-pswp-width="1280"
+        data-pswp-height="960"
+      >
+        <img src="images/salong-2.jpg" alt="HMS Hisingen in 2000" />
+      </a>
+      <a
+        href="images/salong-1.jpg"
+        data-pswp-src="images/salong-1.jpg"
+        data-pswp-width="960"
+        data-pswp-height="1280"
+      >
+        <img src="images/salong-1.jpg" alt="HMS Hisingen in 2000" />
+      </a>
+      <a
+        href="images/hytt-1.jpg"
+        data-pswp-src="images/hytt-1.jpg"
+        data-pswp-width="864"
+        data-pswp-height="1280"
+      >
+        <img src="images/hytt-1.jpg" alt="HMS Hisingen in 2000" />
+      </a>
+      <a
+        href="images/hytt-3.jpg"
+        data-pswp-src="images/hytt-3.jpg"
+        data-pswp-width="864"
+        data-pswp-height="1280"
+      >
+        <img src="images/hytt-3.jpg" alt="HMS Hisingen in 2000" />
+      </a>
+    </div>
+
+    <article><p>Nu har du chansen att förvärva en bit välskött sjöhistoria, HMS Hisingen (M43), en fiskeminsvepare byggd i trä, 24 meter lång och 6,5 meter bred. Hon var den första av sju fiskeminsvepare av Hisingen-klass som byggdes. 1960 sjösattes hon och levererades till flottan. 1999 utrangerades hon och användes några år som fiskecharterbåt <em>(?)</em>, då certifierad för 40 passagerare, när hon köptes av nuvarande ägare byggdes hon om till en rymlig bobåt.</p>
+<p>Hisingen har legat mitt i stan i många år med Stockholms inlopp som utsikt från den rymliga salongen, som har matchande skjutglasdörrar på både styrbord och babord. I salongen, förutom fantastiska utsikter beroende på kaj eller ankringsplats, finns en vedkamin som sprider både värme och mysfaktor på ett effektivt sätt. Rummet är möblerat med en stor, bekväm soffgrupp framför en stor TV och ett högkvalitativt musiksystem. Föröver i salongen finns en upphöjd däcksyta där det finns plats för ett middagsbord med sex stolar och ett vitrinskåp intill. Längs med salongen till styrbord finns en planerad yta för ett ytterligare kök, där det idag står en kaffebryggare och annat fikapyssel. En lejdare leder ner till salongen och ytorna under däck.</p>
+<p>På samma däcksplan längst akterut finns en byssa med tillhörande mäss och en lejdare ner till under däck.</p>
+<p>Nästa skottdörr från aktern leder till det rymliga och välplanerade maskinrummet (läs mer under specifikationer), och efter det finns skottdörren till en toalett.</p>
+<p>Ovanför huvuddäck finns uppgångar på båda sidor till en styrhytt med god sikt. Framför styrhytten finns ett soldäck som nås via en lejdare från fördäck. Soldäcket har gott om plats för utemöbler, vilket gör det idealiskt för att äta, sola och koppla av.</p>
+<p>Under däck finns en salong och fyra hytter, inklusive förhytten med takfönster och den rymliga akterhytten med fönster i linje med huvuddäcket.</p>
+<h2>Besiktning och Plats:</h2>
+<p>Båten kan beskådas på Högmarsö, Stockholm.</p>
+<h2>Tillstånd:</h2>
+<p>HMS Hisingen är körklar och fungerar felfritt. Hon var i dockan senast 2021 och alla hennes ytskikt lackades under sommaren 2024.</p>
+<h2>Specifikationer:</h2>
+<ul>
+<li>Fartygsnamn: HMS Hisingen (M43)</li>
+<li>Anropssignal: <em>?</em></li>
+<li>Deplacement: 150 ton</li>
+<li>Längd: 24 m</li>
+<li>Bredd: 6,5 m</li>
+<li>Djupgående: <em>?</em></li>
+<li>Motor: <em>?</em></li>
+<li>Bränsle: Diesel</li>
+<li>Byggnadsår: 1960</li>
+<li>Skrov: Trä <em>(ek?)</em></li>
+<li>Boyta: <em>(?)</em></li>
+</ul>
+<h2>Utrustning:</h2>
+<ul>
+<li>CO2-dusch i maskinrummet installerad 2005</li>
+<li>2x 1,2 m³ vattentankar</li>
+</ul>
+<p><em>Övrig utrustning (ex. septiktank, länspumpar, generator, oljeseparator, backslag, propeller, gångtimmar, bränsleförbrukning, elsystem)</em></p>
+<p><em><strong>Exempel från annan båtannons:</strong></em></p>
+<ul>
+<li>Lufttorkare F-Tech CRI 20 B</li>
+<li>Varmvattenberedare</li>
+<li>Trollingmaskin/fiskemaskin</li>
+<li>Refleks kamin 61ms med kokplatta</li>
+<li>Generator: Onan 7 kW 220 V (servad 2022.10)</li>
+<li>Omformare 24 V-220 V Trace DR serie power inverter / Charger</li>
+<li>Batteriladdare/inverter: Victron energy- blue power Multiplus 24 V/5000 VA/120 Amp</li>
+</ul>
+<p>Navigationsutrustning: VHF, ekolod, kompass, radar, plotter, gyro, intern UHF-radio</p>
+<p>LSA &amp; FFE: Livflotte, livboj, EEBD Draeger, brandsläckare, överlevnadsdräkter</p>
+<h2>Kontakt</h2>
+<ul>
+<li>Ring Håkan på <a href="tel:0700019121">070 001 91 21</a></li>
+<li><em>mail</em></li>
+</ul>
+</article>
+  </body>
+</html>
